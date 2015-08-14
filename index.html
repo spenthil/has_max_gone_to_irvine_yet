@@ -1,1 +1,61 @@
-Hello World!
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Has Max Gone to Irvine yet?</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link rel="stylesheet" href="flipclock.css">
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            padding: 2em;
+        }
+
+        h1 {
+            font-size: 4em;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 4em;
+            font-weight: 400;
+            margin-top: .5em;
+        }
+
+        .clock {
+            margin: 3em auto;
+            width: 700px;
+            font-size: .8em;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        @media screen and (max-width: 767px) {
+            body {
+                zoom: 0.4;
+                -moz-transform: scale(0.4)
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Has Max Gone to Irvine&nbsp;yet?</h1>
+<h2>No</h2>
+
+<div id="clock" class="clock"></div>
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="flipclock.min.js"></script>
+<script type="text/javascript">
+    var seconds = ((new Date("Fri Sep 11 2015 17:00:00 GMT-0700 (PDT)")) - (new Date())) / 1000;
+    var clock = $('#clock').FlipClock(seconds, {
+        clockFace: 'DailyCounter',
+        countdown: true
+    });
+</script>
+</body>
+</html>
